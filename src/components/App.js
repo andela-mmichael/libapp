@@ -23,7 +23,7 @@ const App = React.createClass({
   handleSearchTitle: function(e) {
     e.preventDefault();
     let input = this.state.searchValue;
-    let result = this.state.books.map(function(book) {
+    let result = allBooks.map(function(book) {
       if(Helper.searchTitle(input, book)) {
         return book;
       }
@@ -33,17 +33,13 @@ const App = React.createClass({
     result = result.filter(function(obj) {
       return obj !== false;
     })
-    console.log('result', result)
-
     this.setState({books: result})
-
-    console.log('state', this.state)
   },
 
   handleSearchAuthor: function(e) {
     e.preventDefault();
     let input = this.state.searchValue;
-    let result = this.state.books.map(function(book) {
+    let result = allBooks.map(function(book) {
       if(Helper.searchAuthor(input, book)) {
         return book;
       }
@@ -53,17 +49,13 @@ const App = React.createClass({
     result = result.filter(function(obj) {
       return obj !== false;
     })
-    console.log('result', result)
-
     this.setState({books: result})
-
-    console.log('state', this.state)
   },
 
   handleSearchYear: function(e) {
     e.preventDefault();
     let input = this.state.searchValue;
-    let result = this.state.books.map(function(book) {
+    let result = allBooks.map(function(book) {
       if(Helper.searchYear(input, book)) {
         return book;
       }
@@ -80,7 +72,6 @@ const App = React.createClass({
   },
 
   render: function () {
-
     return (
       <div className="App">
         <div className="App-header">
@@ -99,4 +90,4 @@ const App = React.createClass({
   }
 })
 
-export default App;
+module.exports = App;

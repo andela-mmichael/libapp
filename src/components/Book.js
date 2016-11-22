@@ -1,18 +1,18 @@
 import React from 'react';
 
-const BookComponent = React.createClass({
+const Book = React.createClass({
   render: function() {
     let book = this.props.book;
     return (
       <div className="col-md-3">
         <img src={book.avatar} className="img-thumbnail" alt={book.avatar}/>
-        <p>Title: {book.title}</p>
-        <p>Author: {book.author}</p>
-        <p>Published Year: {book.year}</p>
+        <p><strong>Title:</strong> {book.title}</p>
+        <p><strong>Author:</strong> {book.author}</p>
+        <p><strong>Published Year:</strong> {book.year}</p>
       </div>
     );
   }
 
 });
 
-export default BookComponent;
+module.exports = Book;
